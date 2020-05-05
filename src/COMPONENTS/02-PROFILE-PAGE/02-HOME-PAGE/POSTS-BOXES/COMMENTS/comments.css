@@ -1,0 +1,241 @@
+.comments-div {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.3);
+  height: 100%;
+  width: 100%;
+  z-index: 200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.comments-div * {
+  transition: 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.comments-inside-div {
+  background: #fff;
+  height: 600px;
+  width: 500px;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+.comments-inside2-div {
+  min-height: 30%;
+  height: auto;
+  padding: 15px;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  justify-content: center;
+  align-items: center;
+}
+.com-ins2-img {
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+.ins2-inside-h1 {
+  font-size: 20px;
+}
+.ins2-inside-h1:hover {
+  cursor: pointer;
+  color: #2ea3f2;
+}
+.ins2-inside-time {
+  font-size: 13px;
+  color: #aaa69d;
+  margin-bottom: 15px;
+}
+.ins2-inside-body {
+  margin-bottom: 15px;
+}
+.com-ins2-inside > div {
+  display: flex;
+  flex-direction: row;
+}
+.com-ins2-inside > div > p {
+  margin-right: 10px;
+}
+/* FINISH STYLE THE HEADER DIV */
+.comments-inside3-div {
+  text-align: center;
+  padding: 20px;
+  border-top: solid 0.1px #f1f2f6;
+}
+.com-ins3-btn {
+  padding: 8px;
+  background: none;
+  border: none;
+  transition: 0.3s;
+  border-radius: 4px;
+  color: #1976d2;
+  font-weight: 600;
+  letter-spacing: 1px;
+  outline: none;
+  margin-bottom: 15px;
+}
+.com-ins3-btn:hover {
+  background-color: #dff9fb;
+}
+
+/* Section 4 */
+.comments-inside4-div {
+  padding: 15px;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  justify-content: center;
+  align-items: center;
+  min-height: 20%;
+  border-top: solid 0.1px #f1f2f6;
+}
+.comments-inside4-div:hover {
+  background-color: #f1f2f6;
+}
+.comments-inside4-div img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+.ins4-h1 {
+  font-size: 17px;
+}
+.ins4-body {
+  font-size: 14px;
+}
+.com-wrap-icon {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+  transform: translateY(-4px);
+  cursor: pointer;
+}
+.c-w-i-div {
+  transform: translateY(-4.5px) translateX(-1px);
+}
+.c-w-i-div:hover {
+  background-color: #dff9fb;
+}
+.com-wrap-icon-img {
+  height: 20px;
+}
+.c-w-i-i {
+  transform: translateY(0.5px);
+}
+
+.wrap-x-button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.wrap-x-button:hover {
+  background-color: #f1f2f6;
+}
+.x-button {
+  font-size: 35px;
+  transform: rotate(45deg) translateY(-4.5px);
+  color: #d1ccc0;
+}
+.x-button:hover {
+  color: black;
+}
+
+.popup-delete {
+  height: 30px;
+  width: 100px;
+  border: solid 0.5px;
+  position: absolute;
+  top: 30px;
+  left: -50px;
+  text-align: center;
+  line-height: 1.7;
+  transform: scale(0);
+  transition: 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  user-select: none;
+  border-color: black;
+}
+.test-delete:hover {
+  color: #c0392b;
+  background-color: #fff;
+}
+.test-delete {
+  transform: scale(1);
+}
+
+.com-ins2-icon-p:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Like Box */
+.com-in-likes-box {
+  position: absolute;
+  height: 100px;
+  width: 150px;
+  top: -100px;
+  left: 0;
+  border: solid 0.3px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: flex-start;
+  overflow-y: scroll;
+  transform: scaleY(0);
+}
+.com-in-likes-box-show {
+  transform: scaleY(1);
+}
+.com-in-likes-box p {
+  line-height: 1.7;
+  letter-spacing: 1.2px;
+  color: white;
+}
+.com-in-likes-box::-webkit-scrollbar {
+  width: 0.4em;
+}
+
+/* Test Spinner */
+.deleteCommentSpinner {
+  pointer-events: none;
+}
+.deleteCommentSpinner::before {
+  content: "";
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  border: 5px solid #bdc3c7;
+  border-top-color: #c0392b;
+  position: absolute;
+  left: 50%;
+  top: -50%;
+  margin-left: -30px;
+  margin-top: 90px;
+  animation: deleteCommentSpinner 0.5s linear infinite;
+  opacity: 0.7;
+}
+
+.likes-comment-p:hover {
+  text-decoration: underline;
+}
+/* Animate Spinner  */
+@keyframes deleteCommentSpinner {
+  to {
+    transform: rotate(360deg);
+  }
+}

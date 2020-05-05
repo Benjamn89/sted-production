@@ -1,0 +1,241 @@
+/* Gadering Pointers */
+.in-sin-div-features img,
+.in-feat-p,
+.in-feat-p2 {
+  cursor: pointer;
+}
+
+.posts-boxes-wrapper {
+  width: 60%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.posts-boxes-wrapper * {
+  transition: 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.post-div {
+  border: solid 0.5px lightgrey;
+  border-radius: 2px;
+  height: auto;
+  min-height: 15vh;
+  display: grid;
+  grid-template-columns: 2fr 5fr;
+  margin-bottom: 10px;
+  position: relative;
+}
+/* Style the x button */
+.post-delete-div::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  left: -6px;
+  top: -7px;
+  transform: scaleY(0);
+  border: solid 1.5px #c0392b;
+  transform-origin: 100% 50%;
+  transition: 0.2s;
+}
+.post-delete-div:hover::before {
+  transform: scaleY(1);
+}
+.post-delete-div {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+}
+.post-delete-btn {
+  max-height: 20px;
+  max-width: 20px;
+}
+
+.post-div-img {
+  height: 99%;
+  min-width: 170px;
+  max-width: 170px;
+  align-self: center;
+}
+.inside-single-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+/* Style the likes/commnets div */
+.in-sin-div-features {
+  display: flex;
+  flex-direction: row;
+}
+.in-feat-p {
+  margin-right: 15px;
+  user-select: none;
+}
+.in-sin-div-features {
+  font-size: 15px;
+}
+.in-sin-div-features img {
+  height: 20px;
+}
+.in-feat-p2 span {
+  margin-right: 3px;
+}
+.i-f-p-l-s:hover {
+  text-decoration: underline;
+}
+
+.wrap-feat-icon-div {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  transform: translateY(-4px);
+  margin-right: 4px;
+  text-align: center;
+  line-height: 2.5;
+}
+.wrap-like-spe {
+  line-height: 2.2;
+  transform: translateY(-3.2px);
+}
+.wrap-feat-icon-div:hover {
+  background-color: #dff9fb;
+}
+.wrap-like-spe:hover {
+  background-color: transparent;
+}
+.f-i-d-i2 {
+  transform: translateY(1.5px) translateX(0.3px);
+}
+/* Style the likes/commnets div */
+
+/* Style the text inside the posts box */
+.in-sin-p1 {
+  font-weight: bold;
+}
+.in-sin-p1-span:hover {
+  color: #2ea3f2;
+  cursor: pointer;
+}
+.in-sin-p2 {
+  transform: translateY(-10px) translateX(10px);
+  font-size: 13px;
+  color: #aaa69d;
+}
+.in-sin-p3 {
+  transform: translateY(-15px);
+  font-size: 15px;
+}
+
+/* Create Post Spinner  */
+.createPostSpinner {
+  position: absolute;
+  z-index: 300;
+  pointer-events: none;
+}
+.createPostSpinner::before {
+  content: "";
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  border: 5px solid #bdc3c7;
+  border-top-color: #c0392b;
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  margin-left: -30px;
+  margin-top: 90px;
+  animation: createPostSpinner 0.5s linear infinite;
+  z-index: 200;
+  opacity: 0.7;
+}
+
+/* Like Box */
+.in-likes-box {
+  position: absolute;
+  height: 100px;
+  width: 150px;
+  top: -100px;
+  left: 0;
+  border: solid 0.3px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: flex-start;
+  overflow-y: scroll;
+  transform: scaleY(0);
+}
+.in-likes-box-show {
+  transform: scaleY(1);
+}
+.in-likes-box p {
+  line-height: 1.7;
+  letter-spacing: 1.2px;
+  color: white;
+  cursor: pointer;
+}
+.in-likes-box p:hover {
+  text-decoration: underline;
+}
+.in-likes-box::-webkit-scrollbar {
+  width: 0.4em;
+}
+
+/* Animate Spinner  */
+@keyframes createPostSpinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 980px) {
+  .posts-boxes-wrapper {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 700px) {
+  .post-div {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100px;
+    margin: 20px auto;
+  }
+  .post-div-img {
+    height: 143px;
+    min-height: 143px;
+    min-width: 143px;
+    max-width: 143px;
+  }
+  .inside-single-div {
+    transform: translateX(0);
+    height: 100%;
+    width: 100%;
+    text-align: center;
+  }
+  .in-sin-div-features {
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 635px) {
+  .post-div {
+    flex-direction: column;
+    height: 300px;
+    padding: 15px 20px;
+  }
+  .post-div-img {
+    min-height: 0;
+    min-width: 0;
+    max-height: 80px;
+    max-width: 80px;
+    border-radius: 50%;
+  }
+}
+
+/* @media screen and (max-width: 900px) and (min-width: 600px) */

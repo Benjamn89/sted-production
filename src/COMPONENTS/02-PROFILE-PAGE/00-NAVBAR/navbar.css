@@ -1,0 +1,107 @@
+nav {
+  height: 8vh;
+  width: 100%;
+  background-color: #c0392b;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+nav img {
+  height: 50%;
+  position: absolute;
+  left: 0;
+}
+
+.nav-inside-div {
+  display: flex;
+  flex-direction: row;
+  margin-right: 35px;
+}
+
+.nav-inside-p {
+  margin-right: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+  position: relative;
+  line-height: 1.7;
+  opacity: 0.8;
+}
+.nav-inside-p:hover {
+  opacity: 1;
+}
+
+.nav-p1 {
+  padding-left: 5px;
+}
+
+.nav-p1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  height: 1px;
+  width: 110%;
+  transition: 0.3s;
+  transform: scaleX(0);
+  transform-origin: 100% 50%;
+}
+.nav-p1:hover::before {
+  transform: scaleX(1);
+}
+.nav-p1::after {
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: 0;
+  background-color: #fff;
+  height: 1px;
+  width: 110%;
+  transition: 0.3s;
+  transform: scaleX(0);
+}
+.nav-p1:hover::after {
+  transform: scaleX(1);
+}
+.nav-p3 {
+  font-weight: bold;
+}
+/* Transfrom border on hover */
+.nav-p2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  height: 1px;
+  width: 0;
+  transition: 0.3s;
+}
+
+.nav-p2:hover::before {
+  width: 100%;
+}
+.nav-p2::after {
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: 0;
+  background-color: #fff;
+  height: 1px;
+  width: 100%;
+  transition: 0.3s;
+  transform: scaleX(0);
+  transform-origin: 100% 50%;
+}
+.nav-p2:hover::after {
+  transform: scaleX(1);
+}
+
+@media only screen and (max-width: 650px) {
+  nav {
+    justify-content: flex-end;
+  }
+}
