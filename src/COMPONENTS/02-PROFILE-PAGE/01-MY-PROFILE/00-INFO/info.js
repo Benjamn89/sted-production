@@ -1,17 +1,16 @@
 import React, { Component } from "react";
 import "./info.css";
-// Import redux
+
 import { connect } from "react-redux";
-// Import Components
+
 import ProfileBox from "../../../FUNCTIONS/profile-box";
 
 class Info extends Component {
   render() {
-    // Short cut to the profile box state
     const profileBoxState = this.props.profileBoxState;
-    // Initial var for display the componenet
+
     var infoDiv = null;
-    // Checking if the profileBoxState exists to render the info
+
     if (profileBoxState.email) {
       infoDiv = (
         <div className="info-div">

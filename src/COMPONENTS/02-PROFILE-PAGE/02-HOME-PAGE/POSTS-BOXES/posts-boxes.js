@@ -27,6 +27,7 @@ class PostsBoxes extends Component {
 
   shouldComponentUpdate(nP, nS) {
     const thisProps = this.props.postsArray;
+
     if (
       nP.postsArray.changePost !== thisProps.changePost ||
       nP.postsArray.addLike !== thisProps.addLike

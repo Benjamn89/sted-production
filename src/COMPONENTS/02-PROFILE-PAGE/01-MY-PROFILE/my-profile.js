@@ -19,9 +19,7 @@ import Delete from "../../../media/delete.png";
 var index;
 
 class MyProfile extends Component {
-  componentDidMount() {
-    console.log("ComponentDidMount");
-  }
+  componentDidMount() {}
 
   activeBtn = (e) => {
     if (e.target.className === "my-pro-p") {
@@ -185,8 +183,6 @@ class MyProfile extends Component {
   };
 
   render() {
-    console.log("ProfilePage -> REDNER!!!");
-
     var currentSection;
 
     var thisState = this.props.profilePageState;
