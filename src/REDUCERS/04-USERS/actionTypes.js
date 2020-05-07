@@ -1,5 +1,5 @@
 import boxActionTypes from "../02-HOME-PAGE/01-PROFILE-BOX/actionTypes";
-
+// Create db connection
 const faunadb = require("faunadb"),
   q = faunadb.query;
 const client = new faunadb.Client({
@@ -14,6 +14,7 @@ const actionTypes = {
   },
 
   fetchUserData: (profileRef) => {
+    // Load Spinner
     document.querySelector(".my-profile-div").classList.add("showSpinner");
     var localS =
       typeof window !== "undefined" &&
@@ -34,17 +35,26 @@ const actionTypes = {
             ret.data.ref = ret.ref.value.id;
             return (profileUser = ret.data);
           }),
-      ]).then((sucess) => {
-        const obj = {
-          profileUser,
-          loginUser,
-        };
-        dispatch(actionTypes.renderUserData(obj));
-      });
+      ])
+        .then((sucess) => {
+          const obj = {
+            profileUser,
+            loginUser,
+          };
+          dispatch(actionTypes.renderUserData(obj));
+        })
+        .catch((err) => {
+          // Remove spinner
+          document
+            .querySelector(".my-profile-div")
+            .classList.remove("showSpinner");
+          console.log(err);
+        });
     };
   },
 
   fetchUserDirect: (profileRef) => {
+    // Load Spinner
     document.querySelector(".my-profile-div").classList.add("showSpinner");
     var localS =
       typeof window !== "undefined" &&
@@ -75,6 +85,7 @@ const actionTypes = {
     };
   },
   renderUserData: (obj) => {
+    // Remove spinner
     document.querySelector(".my-profile-div").classList.remove("showSpinner");
     return {
       type: "renderUserData",
@@ -83,6 +94,7 @@ const actionTypes = {
     };
   },
   fetchPostsFromUsers: (pro) => {
+    // Initital arr to push into the results
     var storeArr = [];
     return (dispatch) => {
       client
@@ -94,8 +106,9 @@ const actionTypes = {
         )
         .then((ret) => {
           ret.data.map((el) => {
+            // Retrive the post ref
             var ref = el.ref.value.id;
-
+            // Inject the post ref to the db
             el.data.ref = ref;
             return storeArr.push(el.data);
           });
@@ -104,6 +117,7 @@ const actionTypes = {
     };
   },
   renderPostsFromUsers: (posts, pro) => {
+    // Remove Spinner
     document.querySelector(".my-pro-view-div").classList.remove("showSpinner");
     return {
       type: "renderPostsFromUsers",
@@ -146,10 +160,11 @@ const actionTypes = {
     };
   },
   deletePostFromUsers: (newPosts) => {
+    // Remoe Spinner
     document
       .querySelectorAll(".delete-modal-inside-div")[1]
       .classList.remove("deleteCommentSpinner");
-
+    // Exit delete modal
     document.querySelectorAll(".delete-modal-div")[1].style.display = "none";
     return {
       type: "deletePostFromUsers",
@@ -173,6 +188,7 @@ const actionTypes = {
     };
   },
   updateFriendsUserRender: (data) => {
+    // Remove Spinner
     document.querySelector(".no-friends-div").classList.remove("showSpinner2");
     return {
       type: "updateFriendsUserRender",
