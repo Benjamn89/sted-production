@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import actionTypes from "../../../REDUCERS/01-NAVBAR/actionTypes";
 import "./navbar.css";
-// Import Components
+
 import RemoveBox from "./remove-box";
 import SideBar from "./SIDE-NAVBAR/side-navbar";
 
@@ -42,7 +42,6 @@ class Navbar extends Component {
   };
 
   removeProfile = () => {
-    // Load Spinner
     document
       .querySelector(".remove-inside-div")
       .classList.add("createPostSpinner");
@@ -50,9 +49,8 @@ class Navbar extends Component {
   };
 
   openSideNav = () => {
-    // Turn around the arrow
     document.querySelector(".side-nav-inside").classList.toggle("sni-click");
-    // Open the sid nav bar
+
     document.querySelector(".actual-side-nav-div").classList.toggle("asnd");
   };
 
@@ -62,7 +60,6 @@ class Navbar extends Component {
   };
 
   render() {
-    console.log("Navbar render");
     return (
       <nav>
         <img src={NavLogo} alt="nav-img" />

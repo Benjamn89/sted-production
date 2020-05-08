@@ -1,8 +1,17 @@
 .welcome-part2-div {
   background-color: #f4f5f9;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
   justify-content: space-evenly;
+  font-family: Lora, serif;
+  font-weight: 400;
 }
 .welcome-part-div li {
   list-style: disc;
@@ -14,9 +23,18 @@
   font-weight: 400;
 }
 .part-two-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
   justify-content: space-evenly;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   height: 60%;
 }
@@ -36,6 +54,9 @@
 .part-two-form button {
   height: 35px;
   position: relative;
+}
+.part-two-form label {
+  transform: translateY(15px);
 }
 .part-two-p {
   margin-top: 35px;
@@ -95,5 +116,8 @@
 @media only screen and (max-width: 980px) {
   .showSpinner:before {
     margin-left: -50px;
+  }
+  .part-two-form label {
+    transform: translateY(0);
   }
 }

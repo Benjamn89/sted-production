@@ -2,12 +2,10 @@ import React, { Component } from "react";
 import DeleteModal from "../02-PROFILE-PAGE/02-HOME-PAGE/POSTS-BOXES/DELETE-MODAL/delete-modal";
 import AddFriend from "./no-friends-msg";
 
-// Titles array (codeless)
 const titles = ["Info", "Posts", "Friends"];
 
 class UserProfile extends Component {
   componentDidMount() {
-    // Focus on the root element for quick exit
     document.querySelector(".my-profile-div").focus();
   }
 
@@ -26,7 +24,6 @@ class UserProfile extends Component {
   render() {
     if (this.props.userExists) {
       if (this.props.friends) {
-        // Display the titles in the Info section from the intiail var
         var titlesInfo = titles.map((title, ind) => {
           return (
             <div
@@ -45,7 +42,6 @@ class UserProfile extends Component {
           );
         });
 
-        console.log("UserProfile -> RUNNING");
         return (
           <div
             className="my-profile-div"
