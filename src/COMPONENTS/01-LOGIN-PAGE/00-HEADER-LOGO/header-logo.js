@@ -8,7 +8,6 @@ class HeaderLogo extends Component {
   }
 
   render() {
-    console.log("HeaderLogo -> REDNER!!!");
     return (
       <div className="logo-div">
         <svg
