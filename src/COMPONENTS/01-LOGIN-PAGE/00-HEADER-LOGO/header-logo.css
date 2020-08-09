@@ -1,14 +1,76 @@
 .logo-div {
-  background-color: #c0392b;
-  height: 35vh;
-  -webkit-transform: skew(0, -3deg);
-  transform: skew(0, -3deg);
-  margin-top: -100px;
+  background: #c0392b;
+  height: auto;
+  padding: 50px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-.logo-div img {
-  padding-top: 120px;
+
+.logo-svg {
+  margin-bottom: 30px;
 }
-.logo-p {
+
+.logo-svg path {
+  stroke: #fff;
+  stroke-width: 2;
+}
+
+.logo-svg path:nth-child(1) {
+  stroke-dasharray: 452.75px;
+  stroke-dashoffset: 452.75px;
+  animation: svgIt 1s linear forwards;
+}
+.logo-svg path:nth-child(2) {
+  stroke-dasharray: 308.07px;
+  stroke-dashoffset: 308.07px;
+  animation: svgIt 1s linear forwards 0.5s;
+}
+.logo-svg path:nth-child(3) {
+  stroke-dasharray: 444.9px;
+  stroke-dashoffset: 444.9px;
+  animation: svgIt 1s linear forwards 1s;
+}
+.logo-svg path:nth-child(4) {
+  stroke-dasharray: 572.32px;
+  stroke-dashoffset: 572.32px;
+  animation: svgIt 1s linear forwards 1.5s;
+}
+
+@keyframes svgIt {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.logo-header {
   color: #fff;
-  padding-left: 150px;
+  font-size: 15px;
+  font-weight: 500;
+  position: relative;
+}
+
+.logo-header::before {
+  position: absolute;
+  content: "";
+  bottom: -3px;
+  width: 10%;
+  height: 2px;
+  background: #fff;
+  transition: 0.7s;
+  transform-origin: 100% 0;
+  animation: logoLine 3s linear infinite;
+}
+
+@keyframes logoLine {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 90%;
+  }
+  100% {
+    left: 0;
+  }
 }
