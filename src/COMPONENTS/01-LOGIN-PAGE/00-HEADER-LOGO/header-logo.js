@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./header-logo.css";
-import Logo from "../../../media/sted.png";
 
 class HeaderLogo extends Component {
   shouldComponentUpdate() {
